@@ -11,7 +11,7 @@ To have a nice icon, that executes the program:
 
 2) edit "music_nice.txt" line 3: Exec=python [directory, where the py-file is]
 
-3) copy the "music_nice.txt" to "/home/.local/share/application
+3) copy the "music_nice.txt" to "/home/.local/share/application"
 
 4) rename "music_nice.txt" to "music_nice.desktop"
 
