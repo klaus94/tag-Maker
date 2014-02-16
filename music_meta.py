@@ -41,11 +41,11 @@ for fn in os.listdir(fpath):
 		audio.save()
 		
 		#move title to /home/dominik/Musik
-		print "sending " + fn + " to home/domink/Musik ..."
+		print "sending " + fn + " to home/ ..."
 		os.system("sleep 1")
-		sendTitle = fn.replace(" ", "\ ").replace("(", "\(").replace(")", "\)")	#sonderzeichen erkennen
+		sendTitle = fn.replace(" ", "\ ").replace("(", "\(").replace(")", "\)")	#identify special characters
 		fname = os.path.join(fpath, sendTitle)
-		os.system("mv " + fname + " /home/dominik/Musik")
+		os.system("mv " + fname + " /home/")
 		
 		#Informationen
 		os.system("sleep 1")
