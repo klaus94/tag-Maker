@@ -1,0 +1,31 @@
+tag-maker
+#########
+
+this program can automatically fill in the tags: title and interpret from a mp3-file, 
+if the name is like "[auther] - [title]"
+
+To have a nice icon, that executes the program:
+1) copy the "icon_music.png" to "/home/.local/share/icons"
+2) copy the "music_nice.txt" to "/home/.local/share/application
+3) rename "music_nice.txt" to "music_nice.desktop"
+4) copy "music_nice.desktop" to your desktop
+5) make "music_nice.desktop" executable:
+	- right-click --> properties --> access rights --> execute file as program
+	- OR: open terminal --> change directory to your desktop --> type in: "chmod +x music_nice.desktop"
+6) alright, you should see the "M"-icon instead of the .desktop file
+
+
+
+
+
+
+
+
+music_nice.txt ist nur dazu da, um die verknüpfung mit dem desktop icon sicherzustellen
+
+sie enthält die nötigen informationen zum erstellen einer .desktop datei
+
+diese .desktop datei wurde in das verzeichnis: /home/dominik/.local/share/applications 
+sowie auf die Arbeitsfläche/Desktop kopiert und ausführbar gemacht
+
+der pfad zum icon ist in der .desktop datei vorgegeben
