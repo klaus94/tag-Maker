@@ -32,21 +32,38 @@ for fn in os.listdir(fpath):
 		title = content[1].strip(".mp3")	#get title (delete '.mp3')
 		title.replace(" _ ","")				#delete " _ " from title
 
+		#make screenshot
+		print "make a photo!!!"
+		os.system("import screenshot.png")
+		os.system("sleep 5")
+
 		#make audio-object from current song and add tags
 		print "set tags to the right values ..."
 		os.system("sleep 1")
 		audio = ID3(fname)
 		audio.add(TIT2(encoding=3, text=title))
 		audio.add(TPE1(encoding=3, text=artist))
+		audio.add(
+			APIC(
+				encoding=3, # 3 is for utf-8
+				mime='image/png', # image/jpeg or image/png
+				type=3, # 3 is for the cover image
+				desc=u'Cover (front)',
+				data=open('screenshot.png').read()
+			)
+		)
 		audio.save()
 		
-		#move title to /home/dominik/Musik
+		#move title to /home/...
 		print "sending " + fn + " to home/ ..."
 		os.system("sleep 1")
 		sendTitle = fn.replace(" ", "\ ").replace("(", "\(").replace(")", "\)")	#identify special characters
 		fname = os.path.join(fpath, sendTitle)
 		os.system("mv " + fname + " /home/")
 		
+		#remove screenshot
+		os.system("rm screenshot.png")
+
 		#Informationen
 		os.system("sleep 1")
 		print "all tasks were successfully finished :)"
